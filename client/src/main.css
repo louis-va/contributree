@@ -1,0 +1,67 @@
+/* RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+/* FONTS */
+@font-face {
+  font-family: "Mona Sans";
+  src: url("./assets/fonts/MonaSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Mona Sans";
+  src: url("./assets/fonts/MonaSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Monaspace Neon";
+  src: url("./assets/fonts/MonaspaceNeon-Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+/* VARIABLES */
+:root {
+  --background: #0e1117;
+  --background-dark: #02040a;
+  --white: #ffffff;
+  --white-muted: #8a939e;
+  --pink: #f5b7a5;
+  --yellow: #f0e16f;
+  --green: #b6d162;
+  --blue: #81d2cf;
+  --purple: #bc99fa;
+  --mona-sans: "Mona Sans", "Helvetica", sans-serif;
+  --monaspace-neon: "Monaspace Neon", monospace;
+}
+
+/* GENERAL */
+body {
+  background-color: var(--background);
+  color: var(--white);
+  font-family: var(--mona-sans);
+  font-weight: 400;
+}
