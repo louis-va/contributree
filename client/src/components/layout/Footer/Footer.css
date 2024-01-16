@@ -1,0 +1,23 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+footer img {
+  width: 3rem;
+  opacity: .5;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  font-size: .75rem;
+  font-family: var(--monaspace-neon);
+  color: rgba(255, 255, 255, 0.3)
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.5)
+}

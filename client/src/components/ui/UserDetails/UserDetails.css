@@ -1,0 +1,36 @@
+.about {
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 1rem;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.about .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .75rem 1rem ;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.about .row:last-child {
+  border-bottom: none;
+}
+
+.about .row.row-title {
+  background-color: rgba(255, 255, 255, .025);
+  font-weight: 700;
+}
+
+.about .row .head {
+  font-size: .75rem;
+  font-family: var(--monaspace-neon);
+  font-weight: 400;
+  color: rgba(255, 255, 255, .6);
+}
+
+.about .row .value {
+  font-size: .75rem;
+  font-family: var(--monaspace-neon);
+  font-weight: 700;
+}
