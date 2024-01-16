@@ -5,6 +5,10 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
+// import routes
+import userRoutes from './src/routes/user.route';
+import searchRoutes from './src/routes/search.route';
+
 // ENV variables
 dotenv.config();
 const PORT = process.env.PORT;
@@ -38,9 +42,8 @@ app.use(function(req: Request, res: Response, next: NextFunction) {
 app.use(morgan('combined'));
 
 // Routes
-app.use('/', (req: Request, res: Response) => {
-  return res.status(200).send({ message: 'Hello world!' })
-});
+app.use('/user', userRoutes);
+app.use('/search', searchRoutes);
 
 // Set port, listen for requests
 app.listen(PORT, () => {
