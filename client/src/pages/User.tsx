@@ -16,7 +16,7 @@ const User = () => {
       <Main>
         <UserTitle username={id!} avatar='https://avatars.githubusercontent.com/u/40118360?v=4' />
         <Tree seed={id!} size={1240} />
-        <UserDetails total={1240} lastYear={324} followers={41} activeSince={2017} />
+        <UserDetails user={id!} total={1240} lastYear={324} followers={41} activeSince={2017} />
       </Main>
       <Footer />
     </Container>

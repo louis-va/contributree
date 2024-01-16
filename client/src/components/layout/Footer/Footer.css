@@ -8,8 +8,11 @@ footer {
 
 footer img {
   width: 3rem;
-  opacity: .5;
   margin-bottom: 1rem;
+  opacity: .5
+}
+footer img:hover {
+  opacity: 1
 }
 
 footer p {
@@ -20,4 +23,7 @@ footer p {
 
 footer a {
   color: rgba(255, 255, 255, 0.5)
+}
+footer a:hover {
+  color: rgba(255, 255, 255, 1)
 }

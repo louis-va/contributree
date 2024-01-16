@@ -1,27 +1,17 @@
 .title {
-  display: inline-block;
-  margin-bottom: 2rem;
-}
-
-.title a {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: white
-}
-.title a:hover {
-  text-decoration: underline;
+  margin-bottom: 1.5rem;
 }
 
 .title img {
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-right: 1rem;
-  border-radius: 2.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-right: .875rem;
+  border-radius: 2.25rem;
 }
 
 .title h1 {
-  font-family: var(--monaspace-neon);
   font-weight: 700;
   font-size: 1.5rem;
 }
