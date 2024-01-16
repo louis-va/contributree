@@ -1,5 +1,6 @@
 .tree-container {
   background-color: var(--background-dark);
+  background-image: url(../../../assets/images/grid-bg.svg);
   aspect-ratio: 1/1;
   border-radius: 1rem;
 }

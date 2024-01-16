@@ -34,7 +34,7 @@ class Tree {
         lineContrast: 0.35,
         vignetting: 0.4,
         vignettingAlpha: 0.5,
-        vignettingBlur: 0.1
+        vignettingBlur: 0.3
       }),
       new AsciiFilter(7)
     ];
