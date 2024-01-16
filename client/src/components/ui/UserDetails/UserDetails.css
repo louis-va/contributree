@@ -1,5 +1,5 @@
 .about {
-  border: 1px solid rgba(255, 255, 255, .1);
+  border: 1px solid var(--border-color);
   border-radius: .75rem;
   margin-top: 1.5rem;
   overflow: hidden;
@@ -9,56 +9,49 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .75rem 1.15rem ;
-  border-bottom: 1px dashed rgba(255, 255, 255, .1);
+  padding: .85rem 1.15rem ;
+  border-bottom: 1px dashed var(--border-color);
 }
 
 .about .row:last-child {
   border-bottom: none;
 }
 
-.about .row-title {
-  background-color: rgba(255, 255, 255, .025);
-  border-bottom: 1px solid rgba(255, 255, 255, .1);
+.about .row-head {
+  background-color: var(--background-light);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 1.15rem ;
 }
 
-.about .row-title .heading {
+.about .row-head .th {
   font-weight: 700;
-  color: rgba(255, 255, 255, .6);
+  color: var(--white-muted);
 }
 
-.about .row-title .heading .bold {
-  font-weight: 700;
-  color: rgba(255, 255, 255, 1);
+.about .row-head .th .bold {
+  color: var(--white);
 }
 
-.about .row-title a.github-link{
-  font-family: var(--monaspace-neon);
-  font-weight: 400;
+.about .row-head a.github-link{
   font-size: .75rem;
-  color: rgba(255, 255, 255, .6);
   display: flex;
   align-items: center;
 }
 
-.about .row-title a.github-link:hover{
-  color: rgba(255, 255, 255, 1);
-}
-
-.about .row-title a.github-link .link-icon{
+.about .row-head a.github-link .link-icon{
   width: .75rem;
   height: .75rem;
   margin-left: .25rem;
 }
 
 .about .row .head {
-  font-size: .75rem;
+  font-size: .85rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, .6);
+  color: var(--white-muted);
 }
 
 .about .row .value {
-  font-size: .75rem;
+  font-size: .85rem;
   font-family: var(--monaspace-neon);
   font-weight: 700;
 }

@@ -11,8 +11,8 @@ interface UserDetailsProps {
 const UserDetails = ({ user, total, lastYear, followers, activeSince }: UserDetailsProps) => {
   return (
     <section className='about'>
-      <div className='row row-title'>
-        <div className='heading'>
+      <div className='row row-head'>
+        <div className='th'>
           About <span className='bold'>{user}</span>
         </div>
         <a href={`https://github.com/${user}`} className='github-link'>

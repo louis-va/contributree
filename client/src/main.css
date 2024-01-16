@@ -19,13 +19,12 @@
 :root {
   --background: #0e1117;
   --background-dark: #02040a;
+  --background-light: #181a20;
   --white: #ffffff;
   --white-muted: #8a939e;
-  --pink: #f5b7a5;
-  --yellow: #f0e16f;
-  --green: #b6d162;
-  --blue: #81d2cf;
-  --purple: #bc99fa;
+  --white-muted-xl: #5b6672;
+  --border-color: #292e38;
+  --blue: #00ffd0;
   --mona-sans: "Mona Sans", "Helvetica", sans-serif;
   --monaspace-neon: "Monaspace Neon", monospace;
 }
@@ -36,6 +35,14 @@ body {
   color: var(--white);
   font-family: var(--mona-sans);
   font-weight: 400;
+}
+
+a {
+  color: var(--white-muted);
+  font-family: var(--monaspace-neon);
+}
+a:hover {
+  color: var(--white)
 }
 
 /* RESET */
