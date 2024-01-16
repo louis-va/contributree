@@ -1,0 +1,10 @@
+.tree-container {
+  background-color: var(--background-dark);
+  aspect-ratio: 1/1;
+  border-radius: 1rem;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+}
