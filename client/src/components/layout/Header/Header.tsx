@@ -1,5 +1,6 @@
 import './Header.css'
 import logo from '@/assets/images/logo.svg'
+import Search from '@/components/ui/Search/Search'
 
 const Header = () => {
   return (
@@ -7,9 +8,7 @@ const Header = () => {
       <a href="/">
         <img className='logo' src={logo} alt="contributree logo" />
       </a>
-      <a href="https://github.com/louis-va/contributree">
-        Github
-      </a>
+      <Search />
     </header>
   )
 }

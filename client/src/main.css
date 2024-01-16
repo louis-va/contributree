@@ -1,31 +1,3 @@
-/* RESET */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-* {
-  margin: 0;
-}
-html, body {
-  height: 100%;
-}
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-input, button, textarea, select {
-  font: inherit;
-}
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-#root, #__next {
-  isolation: isolate;
-}
-
 /* FONTS */
 @font-face {
   font-family: "Mona Sans";
@@ -64,4 +36,89 @@ body {
   color: var(--white);
   font-family: var(--mona-sans);
   font-weight: 400;
+}
+
+/* RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+/* FORM RESET */
+input {
+  -webkit-appearance: none;
+}
+input, label, select, button, textarea {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  font-size: inherit;
+  font-family: inherit;
+}
+input:focus, select:focus {
+  outline: 0;
+}
+input, textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+button, input[type=reset], input[type=button], input[type=submit], input[type=checkbox], input[type=radio], select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type=checkbox], input[type=radio]{
+  width: 13px;
+  height: 13px;
+}
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+}
+::-webkit-search-decoration {
+  display: none;
+}
+button, input[type="reset"], input[type="button"], input[type="submit"]{
+  overflow: visible;
+  width: auto;
+}
+::-webkit-file-upload-button{	
+  padding: 0;
+  border: 0;
+  background: none;
+}
+textarea {
+  vertical-align: top;
+  overflow: auto;
+}
+select[multiple] {
+  vertical-align: top;
 }
