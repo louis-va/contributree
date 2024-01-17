@@ -5,53 +5,74 @@
   overflow: hidden;
 }
 
-.about .row {
+.about .head {
+  background-color: var(--background-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .85rem 1.15rem ;
-  border-bottom: 1px dashed var(--border-color);
-}
-
-.about .row:last-child {
-  border-bottom: none;
-}
-
-.about .row-head {
-  background-color: var(--background-light);
+  padding: 1rem 1.15rem;
   border-bottom: 1px solid var(--border-color);
-  padding: 1rem 1.15rem ;
 }
 
-.about .row-head .th {
+.about .head .head-title {
   font-weight: 700;
   color: var(--white-muted);
 }
 
-.about .row-head .th .bold {
+.about .head .head-title .bold {
   color: var(--white);
 }
 
-.about .row-head a.github-link{
+.about .head a.head-link{
   font-size: .75rem;
   display: flex;
   align-items: center;
 }
 
-.about .row-head a.github-link .link-icon{
+.about .head a.head-link .link-icon{
   width: .75rem;
   height: .75rem;
   margin-left: .25rem;
 }
 
-.about .row .head {
+.about table {
+  width: 100%;
   font-size: .85rem;
+}
+
+.about table tr .year {
+  text-align: left;
+}
+
+.about table tr .max, .about table tr .contribs {
+  text-align: right;
+}
+
+.about table tr th {
+  padding: .75rem 1.15rem;
+  border-bottom: 1px dashed var(--border-color);
   font-weight: 700;
   color: var(--white-muted);
 }
 
-.about .row .value {
-  font-size: .85rem;
+.about table tr td {
+  padding: .5rem 1.15rem;
+  border-bottom: 1px dashed var(--border-color);
   font-family: var(--monaspace-neon);
+  font-weight: 400;
+}
+
+.about table tr:last-child td {
+  border-bottom: none;
+}
+
+.about table tr td.total {
+  padding: .5rem 1.15rem;
   font-weight: 700;
+  font-size: .9rem;
+}
+
+.about table tr td.highest {
+  font-weight: 700;
+  color: var(--blue);
 }
