@@ -14,7 +14,7 @@ interface yearContributions {
 interface userContributions {
   total: number,
   max: number,
-  years: (yearContributions | null)[]
+  years: yearContributions[]
 }
 
 /**
@@ -22,23 +22,22 @@ interface userContributions {
  * @param username
  */
 const getAccountCreationYear = async(username: string): Promise<string | null> => {
-  const url = 'https://api.github.com/graphql';
-  const query = `{user(login: "${username}") {createdAt}}`;
+  try {
+    const url = 'https://api.github.com/graphql';
+    const query = `{user(login: "${username}") {createdAt}}`;
 
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${GITHUB_ACCESS_TOKEN}`,
-    },
-    body: JSON.stringify({ query })
-  });
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${GITHUB_ACCESS_TOKEN}`,
+      },
+      body: JSON.stringify({ query })
+    });
 
-  if (response.ok) {
     const data = await response.json();
-    if (data.data.user===null) return null;
     return data.data.user.createdAt;
-  } else {
+  } catch {
     return null;
   }
 }
@@ -49,11 +48,11 @@ const getAccountCreationYear = async(username: string): Promise<string | null> =
  * @param year 
  */
 const getYearContribution = async(username: string, year: number): Promise<yearContributions | null> => {
-  const url = `https://skyline.github.com/${username}/${year}.json`;
+  try {
+    const url = `https://skyline.github.com/${username}/${year}.json`;
 
-  const response = await fetch(url, { method: 'GET' });
-  
-  if (response.ok) {
+    const response = await fetch(url, { method: 'GET' });
+    
     const data = await response.json();
     const total = data.contributions
       .flatMap((week: any) => week.days.map((day: any) => day.count))
@@ -64,7 +63,7 @@ const getYearContribution = async(username: string, year: number): Promise<yearC
       total: total,
       max: data.max
     }
-  } else {
+  } catch {
     return null;
   }
 }
@@ -95,10 +94,13 @@ const getAllContributions = async(username: string): Promise<userContributions |
     })
   );
 
+  // Filter out null values from totalContributions
+  const filteredContributions = totalContributions.filter((contribution) => contribution !== null) as yearContributions[];
+
   const userContribution = {
-    total: totalContributions.reduce((sum, item) => sum + (item ? item.total : 0), 0),
-    max: Math.max(...totalContributions.map(item => (item ? item.max : 0))),
-    years: totalContributions.slice().reverse()
+    total: filteredContributions.reduce((sum, item) => sum + item!.total, 0),
+    max: Math.max(...filteredContributions.map(item => item!.max)),
+    years: filteredContributions.slice().reverse()
   }
 
   return userContribution;
