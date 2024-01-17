@@ -9,6 +9,7 @@ async function getUserContributions(req: Request, res: Response) {
       .then((data: userContributions | null) => {
         if (data !== null) {
           return res.status(200).send({ 
+            avatar: data.avatar,
             total: data.total,
             max: data.max,
             years: data.years

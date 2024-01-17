@@ -6,25 +6,36 @@ dotenv.config();
 const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN;
 
 interface yearContributions {
-  year: number,
-  total: number,
-  max: number
+  year: number;
+  total: number;
+  max: number;
 }
 
 interface userContributions {
-  total: number,
-  max: number,
-  years: yearContributions[]
+  avatar: string;
+  total: number;
+  max: number;
+  years: yearContributions[];
+}
+
+interface accountDetails {
+  createdAt: string;
+  avatarUrl: string;
 }
 
 /**
- * Get the creation year of a Github user's account
+ * Get the creation year and the avatar image of a Github user's account
  * @param username
  */
-const getAccountCreationYear = async(username: string): Promise<string | null> => {
+const getAccountDetails = async(username: string): Promise<accountDetails | null> => {
   try {
     const url = 'https://api.github.com/graphql';
-    const query = `{user(login: "${username}") {createdAt}}`;
+    const query = `{
+      user(login: "${username}") {
+        createdAt
+        avatarUrl
+      }
+    }`;
 
     const response = await fetch(url, {
       method: 'POST',
@@ -36,7 +47,10 @@ const getAccountCreationYear = async(username: string): Promise<string | null> =
     });
 
     const data = await response.json();
-    return data.data.user.createdAt;
+    return {
+      createdAt: data.data.user.createdAt,
+      avatarUrl: data.data.user.avatarUrl
+    }
   } catch {
     return null;
   }
@@ -78,9 +92,9 @@ const getAllContributions = async(username: string): Promise<userContributions |
   const years = [];
   
   // Get user's account creation date
-  const createdAt = await getAccountCreationYear(username);
-  if (createdAt===null) return null;
-  const createdYear = getYearFromDate(createdAt);
+  const accountDetails = await getAccountDetails(username);
+  if (accountDetails===null) return null;
+  const createdYear = getYearFromDate(accountDetails.createdAt);
 
   // Create an array with user's Github account active years
   for (let year=createdYear!; year<=currentYear; year++) {
@@ -98,6 +112,7 @@ const getAllContributions = async(username: string): Promise<userContributions |
   const filteredContributions = totalContributions.filter((contribution) => contribution !== null) as yearContributions[];
 
   const userContribution = {
+    avatar: accountDetails.avatarUrl,
     total: filteredContributions.reduce((sum, item) => sum + item!.total, 0),
     max: Math.max(...filteredContributions.map(item => item!.max)),
     years: filteredContributions.slice().reverse()
