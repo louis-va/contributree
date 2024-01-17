@@ -30,7 +30,7 @@ const User = () => {
     <Container>
       <Header />
       <Main>
-        <UserTitle username={id!} avatar='https://avatars.githubusercontent.com/u/40118360?v=4' />
+        <UserTitle username={id!} avatar={contributions!.avatar} />
         <Tree seed={id!} size={contributions!.total} />
         <UserDetails user={id!} contributions={contributions!} />
       </Main>

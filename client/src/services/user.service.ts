@@ -1,13 +1,14 @@
 export interface yearContributions {
-  year: number,
-  total: number,
-  max: number
+  year: number;
+  total: number;
+  max: number;
 }
 
 export interface userContributions {
-  total: number,
-  max: number,
-  years: yearContributions[]
+  avatar: string;
+  total: number;
+  max: number;
+  years: yearContributions[];
 }
 
 /**
