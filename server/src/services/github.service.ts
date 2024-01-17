@@ -61,7 +61,7 @@ const getYearContribution = async(username: string, year: number): Promise<yearC
     return {
       year: data.year,
       total: total,
-      max: data.max
+      max: (data.max === null) ? 0 : data.max
     }
   } catch {
     return null;
