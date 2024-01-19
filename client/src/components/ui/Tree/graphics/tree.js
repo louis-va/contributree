@@ -19,8 +19,8 @@ function generateSeedFromUsername(string) {
 }
 
 class Tree {
-  constructor(canvas, seed, size, x, y) {
-    this.canvas = canvas
+  constructor(app, seed, size, x, y) {
+    this.app = app
     this.x = x;
     this.y = y;
     this.seed = generateSeedFromUsername(seed);
@@ -38,10 +38,10 @@ class Tree {
       }),
       new AsciiFilter(7)
     ];
-    this.canvas.stage.addChild(this.container);
+    this.app.stage.addChild(this.container);
     this.graphics = new PIXI.Graphics();
     this.container.addChild(this.graphics);
-    this.canvas.ticker.add(this.update.bind(this));
+    this.app.ticker.add(this.update.bind(this));
 
     this.create();
   }
@@ -59,25 +59,35 @@ class Tree {
     }
   }
 
+  downloadAsPng() {
+    this.app.renderer.plugins.extract.canvas(this.container).toBlob(function (b) {
+      var a = document.createElement("a");
+      document.body.append(a);
+      a.download = `contributree.png`;
+      a.href = URL.createObjectURL(b);
+      a.click();
+      a.remove();
+    }, "image/png");
+  }
+
   destroy() {
     this.graphics.clear();
-    this.canvas.stage.removeChild(this.graphics);
+    this.app.stage.removeChild(this.container);
   }
 }
 
 export function createTree({canvas, seed, size, canvasWidth, canvasHeight}) {
   // Create the canvas
-  const pixi = new PIXI.Application({
+  const app = new PIXI.Application({
     antialias: false,
     width: canvasWidth,
     height: canvasHeight,
     backgroundAlpha: 0,
   });
 
-  const pixiCanvas = pixi.view
+  canvas.appendChild(app.view);
 
-  canvas.appendChild(pixiCanvas);
-  const tree = new Tree(pixi, seed, size, canvasWidth/2, canvasHeight);
+  const tree = new Tree(app, seed, size, canvasWidth/2, canvasHeight);
 
-  return { pixiCanvas, tree };
+  return { app, tree };
 }

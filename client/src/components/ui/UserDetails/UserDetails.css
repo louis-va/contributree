@@ -38,6 +38,8 @@
 .about table {
   width: 100%;
   font-size: .85rem;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .about table tr .year {
@@ -49,25 +51,34 @@
 }
 
 .about table tr th {
-  padding: .75rem 1.15rem;
-  border-bottom: 1px dashed var(--border-color);
+  padding: .85rem 1.15rem;
   font-weight: 700;
   color: var(--white-muted);
 }
 
 .about table tr td {
-  padding: .5rem 1.15rem;
-  border-bottom: 1px dashed var(--border-color);
+  padding: .65rem 1.15rem;
   font-family: var(--monaspace-neon);
   font-weight: 400;
 }
 
-.about table tr:last-child td {
+.about table thead th {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about table tbody tr td {
+  border-bottom: 1px dashed var(--border-color);
+}
+.about table tbody tr:last-child td {
   border-bottom: none;
 }
 
+.about table tfoot td {
+  border-top: 1px solid var(--border-color);
+}
+
 .about table tr td.total {
-  padding: .5rem 1.15rem;
+  padding: .65rem 1.15rem;
   font-weight: 700;
   font-size: .9rem;
 }

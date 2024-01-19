@@ -34,25 +34,31 @@ const UserDetails = ({ user, contributions }: UserDetailsProps) => {
       </div>
 
       <table>
-        <tr>
-          <th className='year'>Year</th>
-          <th className='max'>Max. in a day</th>
-          <th className='contribs'>Contributions</th>
-        </tr>
-
-        {contributions.years.map((year) => (
+        <thead>
           <tr>
-            <td className='year'>{year.year}</td>
-            <td className={`max ${(year.max==highestMaxContributions) ? 'highest' : ''}`}>{year.max}</td>
-            <td className={`contribs ${(year.total==highestYearlyContributions) ? 'highest' : ''}`}>{year.total}</td>
+            <th className='year'>Year</th>
+            <th className='max'>Max. in a day</th>
+            <th className='contribs'>Contributions</th>
           </tr>
-        ))}
+        </thead>
         
-        <tr>
-          <td className='year total'>Total</td>
-          <td className='max total'></td>
-          <td className='contribs total'>{contributions.total}</td>
-        </tr>
+        <tbody>
+          {contributions.years.map((year) => (
+            <tr key={year.year}>
+              <td className='year'>{year.year}</td>
+              <td className={`max ${(year.max==highestMaxContributions) ? 'highest' : ''}`}>{year.max}</td>
+              <td className={`contribs ${(year.total==highestYearlyContributions) ? 'highest' : ''}`}>{year.total}</td>
+            </tr>
+          ))}
+        </tbody>
+        
+        <tfoot>
+          <tr>
+            <td className='year total'>Total</td>
+            <td className='max total'></td>
+            <td className='contribs total'>{contributions.total}</td>
+          </tr>
+        </tfoot>
       </table>
     </section>
   )

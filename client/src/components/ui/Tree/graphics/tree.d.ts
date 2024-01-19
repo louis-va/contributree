@@ -6,4 +6,4 @@ interface createTreeAttributes {
   canvasHeight: number;
 }
 
-export function createTree(attributes: createTreeAttributes): {tree: any, pixiCanvas: any};
+export function createTree(attributes: createTreeAttributes): {app: any, tree: any};
