@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { userContributions, getAllContributions } from '../services/github.service'
+import { userContributions, getAllContributions } from '../services/github-user.service'
 
 async function getUserContributions(req: Request, res: Response) {
   try {
