@@ -1,0 +1,59 @@
+.popular-users {
+  margin-top: 2rem;
+}
+
+.popular-users h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.popular-users .user-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media only screen and (min-width: 580px) {
+  .popular-users .user-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+.popular-users .user-grid a.user-card {
+  text-decoration: none;
+  color: var(--white);
+  font-family: var(--monaspace);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: .35rem;
+}
+.popular-users .user-grid a.user-card:hover {
+  border: 1px solid var(--border-color-hover);
+  cursor: pointer;
+}
+
+.popular-users .user-grid a.user-card img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+}
+
+.popular-users .user-grid a.user-card h3 {
+  font-size: 1rem;
+}
+
+.popular-users .user-grid a.user-card .username {
+  font-size: 1rem;
+  color: var(--white-muted);
+}
+
+.popular-users .user-grid a.user-card .description {
+  font-size: .8rem;
+  color: var(--white-muted);
+  margin-top: .25rem;
+}

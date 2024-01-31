@@ -15,9 +15,9 @@ const User = () => {
   const { id } = useParams();
   const [contributions, setContributions] = useState<userContributions | null | undefined>(undefined)
 
-  // Used for optimization
-  // Changing the key triggers the return statement in the Tree 
-  // component which triggers the cleanup code in the useEffect
+  // Used for optimization.
+  // Changing the key unmounts the Tree component,
+  // which triggers the cleanup code in the useEffect.
   const [treeKey, setTreeKey] = useState<number>(0);
 
   useEffect(() => {
