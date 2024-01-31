@@ -18,7 +18,8 @@ footer img:hover {
 footer p {
   font-size: .75rem;
   font-family: var(--monaspace-neon);
-  color: rgba(255, 255, 255, 0.3)
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
 }
 
 footer a {

@@ -1,10 +1,20 @@
+.search {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.search form {
+  width: 100%;
+  flex-grow: 1;
+}
+
 .search label {
   display: flex;
   align-items: center;
   border: 1px solid var(--border-color);
   border-radius: .4rem;
-  padding: .5rem .5rem;
-  width: 20rem;
+  padding: .6rem .6rem;
+  min-width: 100%;
   cursor: text;
 }
 .search label:focus-within {
@@ -20,8 +30,14 @@
 
 .search input {
   color: var(--white);
-  font-size: .9rem;
+  font-size: 1.1rem;
 }
 .search input::placeholder {
   color: var(--white-muted);
+}
+
+@media only screen and (min-width: 580px) {
+  .search {
+    max-width: 20rem;
+  }
 }

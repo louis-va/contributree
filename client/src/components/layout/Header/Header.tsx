@@ -1,6 +1,6 @@
 import './Header.css'
 import logo from '@/assets/images/logo.svg'
-import Search from '@/components/user/Search/Search'
+import Search from '@/components/layout/Search/Search'
 
 const Header = () => {
   return (
