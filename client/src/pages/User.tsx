@@ -15,7 +15,13 @@ const User = () => {
   const { id } = useParams();
   const [contributions, setContributions] = useState<userContributions | null | undefined>(undefined)
 
+  // Used for optimization
+  // Changing the key triggers the return statement in the Tree 
+  // component which triggers the cleanup code in the useEffect
+  const [treeKey, setTreeKey] = useState<number>(0);
+
   useEffect(() => {
+    setTreeKey(prevKey => prevKey + 1);
     setContributions(undefined)
     const fetchData = async () => {
       const contributions = await fetchUserContributions(id!)
@@ -31,7 +37,7 @@ const User = () => {
   else content = (
     <>
       <UserTitle username={id!} avatar={contributions!.avatar} />
-      <Tree seed={id!} size={contributions!.total} />
+      <Tree key={treeKey} seed={id!} size={contributions!.total} />
       <UserDetails user={id!} contributions={contributions!} />
     </>
   )
