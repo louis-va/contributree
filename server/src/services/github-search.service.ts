@@ -1,3 +1,9 @@
+import dotenv from 'dotenv';
+
+// ENV variables
+dotenv.config();
+const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN;
+
 /**
  * Search for Github users
  * @param query The search query
@@ -8,7 +14,12 @@ const userSearch = async(query: string, n: number): Promise<any> => {
   try {
     const url = `https://api.github.com/search/users?q=${query}&per_page=${n}`;
 
-    const response = await fetch(url, { method: 'GET' });
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${GITHUB_ACCESS_TOKEN}`,
+      },
+    });
     const results = await response.json();
 
     if (results.items.length > 0) {
