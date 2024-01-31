@@ -69,7 +69,7 @@ const POPULAR_USERS: User[] = [
 const PopularUsers = () => {
   return (
     <section className='popular-users'>
-      <h2>Popular Github users</h2>
+      <h2>Popular developers</h2>
       <div className='user-grid'>
         {POPULAR_USERS.map((user, index)=>(
           <UserCard

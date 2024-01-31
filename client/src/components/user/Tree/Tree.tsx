@@ -11,13 +11,25 @@ const Tree = ({ seed, size }: TreeProps) => {
   const canvasRef = useRef<HTMLDivElement>(null);
   const [canvas, setCanvas] = useState<any>(null);
 
+  let canvasSize=750;
+
+  if (size>10000) {
+    canvasSize = 1500
+  } else if (size>5000) {
+    canvasSize = 1375
+  } else if (size>3000) {
+    canvasSize = 1250
+  } else if (size>500) {
+    canvasSize = 1000
+  }
+
   useEffect(() => {
     const pixi = createTree({
       canvas: canvasRef.current,
       seed: seed,
       size: size,
-      canvasWidth: 1000,
-      canvasHeight: 1000
+      canvasWidth: canvasSize,
+      canvasHeight: canvasSize
     });
 
     setCanvas(pixi.tree);
@@ -26,7 +38,7 @@ const Tree = ({ seed, size }: TreeProps) => {
       pixi.tree.destroy();
       pixi.app.view.remove();
     };
-  }, [seed, size]);
+  }, [seed, size, canvasSize]);
 
   const download = () => {
     canvas.downloadAsPng();
