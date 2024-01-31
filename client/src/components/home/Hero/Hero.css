@@ -1,0 +1,23 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-dark);
+  background-image: url(../../../assets/images/hero-background.png);
+  background-size: cover;
+  padding: 12rem 1.25rem 3rem 1.35rem;
+  border-radius: .75rem;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  font-family: var(--monaspace-neon);
+}
+
+.hero p {
+  color: var(--white-muted);
+  text-align: center;
+  margin-bottom: 1rem;
+}
