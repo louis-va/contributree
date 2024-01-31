@@ -4,11 +4,11 @@ import Container from '@/components/layout/Container/Container';
 import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
 import Main from '@/components/layout/Main/Main';
-import UserTitle from '@/components/ui/UserTitle/UserTitle';
-import Tree from '@/components/ui/Tree/Tree';
-import UserDetails from '@/components/ui/UserDetails/UserDetails';
-import Loading from '@/components/ui/Loading/Loading';
-import NotFound from '@/components/ui/NotFound/NotFound';
+import UserTitle from '@/components/user/UserTitle/UserTitle';
+import Tree from '@/components/user/Tree/Tree';
+import UserDetails from '@/components/user/UserDetails/UserDetails';
+import Loading from '@/components/layout/Loading/Loading';
+import NotFound from '@/components/layout/NotFound/NotFound';
 import { userContributions, fetchUserContributions } from '@/services/user.service';
 
 const User = () => {
