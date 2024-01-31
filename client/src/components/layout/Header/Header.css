@@ -1,13 +1,12 @@
 header {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
 }
 
 header .logo {
-  width: 4rem;
+  min-width: 3.3rem;
   opacity: 0.6;
 }
 header .logo:hover {
@@ -23,9 +22,6 @@ header a:hover {
 }
 
 @media only screen and (min-width: 580px) {
-  header {
-    flex-direction: row;
-  }
   header .logo {
     width: 5rem;
   }
