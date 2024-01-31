@@ -1,0 +1,7 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 5rem;
+  font-family: var(--monaspace-neon);
+}

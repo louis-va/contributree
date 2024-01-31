@@ -1,0 +1,21 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white-muted);
+}
+
+.not-found .not-found-icon {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: var(--monaspace-neon);
+  color: var(--white);
+  padding-bottom: 1rem;
+}
+
+.not-found .username {
+  color: var(--white);
+}
