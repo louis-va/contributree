@@ -21,7 +21,7 @@ app.use(helmet());
 
 // Allow requests from multiple origins
 app.use(cors({
-  origin: ["http://localhost:3000"],
+  origin: ["http://localhost:3000", "https://contributree.lou-va.com"],
   credentials: true
 }));
 
